@@ -43,7 +43,7 @@ def upload():
     if 'file' not in request.files or not request.files["file"].filename:
         return redirect(url_for('index'))
     image: FileStorage = request.files["file"]
-    converted_image = herrschwarzify(Image.open(image.stream))
+    converted_image = herrschwarzify(Image.open(image.stream).convert(OVERLAY.mode))
     name = random_name()
     converted_image.save(f"uploads/{name}")
     return redirect(url_for('image_resource', image=name))

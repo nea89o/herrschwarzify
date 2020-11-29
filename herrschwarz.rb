@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'chunky_png'
 require 'rmagick'
 
 COORDS = 225, 1300

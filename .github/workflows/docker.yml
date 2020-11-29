@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - python
+
+name: "Publish Docker Image"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@master
+      - name: Publish Docker image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: romangraef/herrschwarzify/python
+          tag_with_ref: true
+          tags: latest
+

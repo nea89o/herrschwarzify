@@ -3,7 +3,7 @@ import random
 import string
 
 from PIL import Image
-from flask import Flask, render_template, request, url_for, redirect, send_from_directory
+from flask import Flask, render_template, request, url_for, redirect, send_from_directory, send_file
 from werkzeug.datastructures import FileStorage
 
 SIGN_LOCATION = 225, 1300
@@ -36,6 +36,11 @@ def index():
 @app.route("/res/<image>")
 def image_resource(image):
     return send_from_directory('uploads', image)
+
+
+@app.route("/herrschwarz")
+def herrschwarz():
+    return send_file('herrschwarz.png')
 
 
 @app.route("/upload", methods=["POST"])

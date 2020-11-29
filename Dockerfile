@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy
 COPY . ./
-ENV FLASK_APP=app
+ENV FLASK_APP=herrschwarzify
 ENV FLASK_ENV=production
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=5000

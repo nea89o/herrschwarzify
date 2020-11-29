@@ -2,9 +2,8 @@
 
 source "https://rubygems.org"
 
-gem 'mini_magick'
-gem 'chunky_png', '~> 1.3'
-gem "sinatra"
+gem "rmagick", "~> 4.1"
+gem "sinatra", '~> 2.1'
 
 gem "rake", "~> 13.0"
 
